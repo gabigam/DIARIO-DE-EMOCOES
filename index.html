@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário de Emoções</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Diário de Emoções</h1>
+        <div class="form-container">
+            <div class="form-group">
+                <label for="emotionSelect">Emoção:</label>
+                <select id="emotionSelect">
+                    <option value="">Selecione uma emoção</option>
+                    <option value="Feliz">Feliz</option>
+                    <option value="Triste">Triste</option>
+                    <option value="Ansioso">Ansioso</option>
+                    <option value="Estressado">Estressado</option>
+                    <option value="Calmo">Calmo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="emotionIntensity">Intensidade (1-5):</label>
+                <input type="number" id="emotionIntensity" min="1" max="5">
+            </div>
+            <div class="form-group">
+                <label for="emotionNotes">Notas:</label>
+                <textarea id="emotionNotes" rows="3"></textarea>
+            </div>
+            <button id="registerEmotionBtn">Registrar Emoção</button>
+        </div>
+
+        <h2>Filtros</h2>
+        <div class="filter-container">
+            <div class="filter-group">
+                <label for="filterEmotion">Filtrar por Emoção:</label>
+                <select id="filterEmotion">
+                    <option value="">Todas</option>
+                    <option value="Feliz">Feliz</option>
+                    <option value="Triste">Triste</option>
+                    <option value="Ansioso">Ansioso</option>
+                    <option value="Estressado">Estressado</option>
+                    <option value="Calmo">Calmo</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filterDate">Filtrar por Data:</label>
+                <input type="date" id="filterDate">
+            </div>
+            <button id="applyFiltersBtn">Aplicar Filtros</button>
+        </div>
+
+        <h2>Gráfico de Emoções</h2>
+        <canvas id="emotionChart"></canvas>
+
+        <h2>Diário das Emoções</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Emoção</th>
+                    <th>Intensidade</th>
+                    <th>Notas</th>
+                </tr>
+            </thead>
+            <tbody id="diaryOutput"></tbody>
+        </table>
+
+        <div id="weeklySummary"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
